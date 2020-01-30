@@ -33,7 +33,7 @@ def copy_source_code():
     pprint('Copying source code files')
     source_path = os.path.join(dist_path, 'source')
     ignore_list = shutil.ignore_patterns('pipenv', 'venv', 'db.sqlite3', 'deploy.py', '.gitignore', '.git',
-                                         '__pycache__', 'static', 'dist', 'media', '.idea')
+                                         '__pycache__', 'dist', 'media', '.idea')
     shutil.copytree(current_path, source_path, ignore=ignore_list)
     pprint('Copying source code files')
 
@@ -107,3 +107,9 @@ collect_statics()
 copy_statics()
 dump_db()
 changing_settings()
+
+git config --global core.safecrlf false
+git add -A
+git remote add gandi git+ssh://1832840@git.sd6.gpaas.net/default.git
+git push -f gandi d3
+
