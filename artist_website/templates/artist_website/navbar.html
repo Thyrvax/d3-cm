@@ -1,0 +1,87 @@
+<nav class="navbar navbar-expand-md navbar-custom">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item {{ home_page }}">
+                <a class="nav-link" href="{% url 'artist_website:home' %}">Accueil</a>
+            </li>
+            <li class="nav-item {{ bio_page }}">
+                <a class="nav-link" href="{% url 'artist_website:biographie' %}">Biographie</a>
+            </li>
+            <li class="nav-item {{ events_page }}">
+                <a class="nav-link" href="{% url 'artist_website:events' %}">Agenda</a>
+            </li>
+            <li class="nav-item {{ press_page }}">
+                <a class="nav-link" href="{% url 'artist_website:presse' %}">Presse</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {{ presta_page }}" href="#"
+                   id="navbarDropdownMenuLink"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Prestations musicales
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item dropdown-toggle" href="#">Concerts en scène</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                   href="{% url 'artist_website:prestation' slug='rappelle-toi-barbara' %}">Rapelle-toi
+                                Barbara</a></li>
+                            <li><a class="dropdown-item"
+                                   href="{% url 'artist_website:prestation' slug='cine-qui-chante' %}">Ciné qui
+                                Chante</a></li>
+                            <li><a class="dropdown-item"
+                                   href="{% url 'artist_website:prestation' slug='un-zeste-de-leprest' %}">Un zeste de
+                                Leprest</a></li>
+                            <li><a class="dropdown-item"
+                                   href="{% url 'artist_website:prestation' slug='ceremonies-de-deuil' %}">Les 3 B :
+                                Barbara Brel Brassens</a></li>
+                            <li><a class="dropdown-item" href="{% url 'artist_website:prestation' slug='naissance' %}">Naissance</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="{% url 'artist_website:prestation' slug='concerts-prives' %}">Concerts
+                        privés</a></li>
+                    <li><a class="dropdown-item"
+                           href="{% url 'artist_website:prestation' slug='prestations-en-etablissements-medico-sociaux' %}">Prestations
+                        en établisements médico-sociaux</a></li>
+                    <li><a class="dropdown-item"
+                           href="{% url 'artist_website:prestation' slug='ceremonies-de-deuil' %}">Cérémonies de
+                        deuil</a></li>
+
+                </ul>
+            </li>
+
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {{ media_page }}" href="#"
+                   id="navbarDropdownMenuLink"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Médias
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item dropdown-toggle" href="#">Musique</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'artist_website:discographie' %}">Discographie</a></li>
+                            <li><a class="dropdown-item" href="{% url 'artist_website:mp3' %}">Morceaux en écoute</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="{% url 'artist_website:gallery' %}">Photos</a></li>
+                    <li><a class="dropdown-item" href="{% url 'artist_website:videos' %}">Vidéos</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item {{ contact_page }}">
+                <a class="nav-link" href="{% url 'artist_website:email' %}">Contact</a>
+            </li>
+
+            <li class="nav-item {{ link_page }}">
+                <a class="nav-link" href="{% url 'artist_website:links' %}">Liens</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+

@@ -1,0 +1,14 @@
+{% extends 'artist_website/base.html' %}
+
+{% block title %}Prestations{% endblock %}
+{% block content %}
+    {% if prestation %}
+        <div class="prestation">
+            <h3>{{ prestation.title }}</h3>
+            <div class="prestation_text">{{ prestation.text|safe }}</div>
+        </div>
+    {% else %}
+        <p>Prestation introuvable</p>
+    {% endif %}
+
+{% endblock %}

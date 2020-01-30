@@ -1,0 +1,35 @@
+{% extends 'artist_website/base.html' %}
+
+{% load photo_tags %}
+
+{% block content %}
+    <h2> Galerie photo </h2>
+    {% if complete_albums %}
+        {% for album, photos in complete_albums.items %}
+            {% if photos %}
+                <div>
+                    <h3>{{ album }}</h3>
+                    <div class="row picture-row">
+                        {% for photo in photos %}
+                            <div class="col picture">
+                                <a href="{{ photo.picture.url }}" data-toggle="lightbox" data-gallery="{{ album }} ">
+                                    <img src="{{ photo.picture_thumbnail.url }}" class="img-fluid">
+                                </a>
+                            </div>
+                            {% if forloop.counter|divisibleby:4 %}
+                                <div class="clear"></div>
+                                </div>
+                                <div class="row picture-row">
+                            {% endif %}
+
+                        {% endfor %}
+                        </div>
+                </div>
+            {% endif %}
+
+        {% endfor %}
+    {% else %}
+        <p>No image available.</p>
+    {% endif %}
+{% endblock %}
+

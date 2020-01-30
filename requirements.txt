@@ -1,0 +1,13 @@
+asgiref==3.2.3
+Django==3.0.2
+django-appconf==1.0.3
+django-ckeditor==5.9.0
+django-cleanup==4.0.0
+django-crispy-forms==1.8.1
+django-imagekit==4.0.2
+django-js-asset==1.2.2
+pilkit==2.0
+Pillow==7.0.0
+pytz==2019.3
+six==1.14.0
+sqlparse==0.3.0

@@ -1,0 +1,15 @@
+{% extends 'artist_website/base.html' %}
+
+{% block title %}Discographie{% endblock %}
+{% block content %}
+
+    {% for album in discography %}
+        <div class="article">
+            <h3>{{ album.title }}</h3>
+            <p>{{ album.text|safe }}</p>
+        </div>
+    {% empty %}
+        <p>Pas d'article pour le moment</p>
+    {% endfor %}
+
+{% endblock %}

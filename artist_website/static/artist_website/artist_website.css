@@ -1,0 +1,224 @@
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+
+}
+
+h3 {
+    margin-top: 10px;
+    text-align: center;
+}
+
+body {
+    background-color: #121212;
+
+    background-position-x: 50%;
+    background-position-y: 100%;
+    background-repeat: no-repeat;
+    color: lightgrey;
+}
+
+.outouterbox {
+    max-width: 1200px;
+    margin: auto;
+}
+
+@media screen and (max-width: 960px) {
+    .outerbox {
+        background-image: url("./img/bg-high-small.jpg");
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-top: 22%;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .outerbox {
+        background-image: url("./img/bg-high.jpg");
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-top: 16%;
+    }
+}
+
+div#main_col a {
+    color: orange;
+}
+
+div#main_col a:visited, div#main_col a:hover {
+    color: darkorange;
+}
+
+p {
+    color: lightgrey;
+    font-family: SansumiRegular, Helvetica, Arial, sans-serif;
+}
+
+/*
+#page_surround {
+    background: url('./img/bg-high.jpg') 50% 0 no-repeat;
+    padding-top: 220px;
+    min-height: 100%;
+} */
+
+#banne {
+    margin-bottom: 20%;
+    z-index: -10000;
+}
+
+#main_col {
+
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    min-height: 40vh;
+}
+
+#carrousel_col {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+}
+
+.carousel-inner {
+    border-radius: 5px;
+}
+
+#nav_col {
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+
+#footer_col {
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    bottom: 0
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+#outerbox {
+    width: 40%;
+    position: absolute; /* to place it somewhere on the screen */
+    top: 130px; /* free space at top */
+    bottom: 0; /* makes it lock to the bottom */
+}
+
+#innerbox {
+    width: 40%;
+    position: absolute;
+    min-height: 100% !important; /* browser fill */
+    height: auto; /*content fill */
+
+
+}
+
+div.container.innerbox {
+    max-width: 960px;
+}
+
+.dropdown-toggle.active-dropdown::after {
+    transform: rotate(-90deg);
+}
+
+.navbar-custom .navbar-nav .dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-link {
+    color: white;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: orange;
+    border-radius: 5px;
+}
+
+.navbar-custom .navbar-nav .dropdown-menu > li > a {
+    color: white;
+}
+
+.navbar-custom .navbar-nav .dropdown-menu > li > a:hover, .navbar-custom .navbar-nav .dropdown-menu > li > a:focus {
+    color: black;
+}
+
+.dropdown-item:active {
+    background-color: white;
+}
+
+.nav-link:focus, .nav-link:hover, nav-link:active {
+    background-color: orange;
+    color: black;
+}
+
+.dropdown-toggle::selection {
+    background-color: #00ee04;
+}
+
+.nav-item.dropdown.show > a {
+    background-color: orange;
+    color: black;
+}
+
+
+.modal-content {
+    background-color: black;
+}
+
+.modal-header > h4, .modal-footer {
+    color: white;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.close {
+    color: white;
+    text-shadow: none;
+    opacity: 1;
+}
+
+.ekko-lightbox-nav-overlay > a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+.clear {
+    height: 5px;
+}
+
+.form-actions {
+    text-align: center;
+}
+
+.picture {
+    text-align: center;
+    margin: auto;
+    vertical-align: center;
+}
+
+.picture-row {
+    margin-bottom: 20px;
+}
+
+.text {
+    text-align: center;
+}

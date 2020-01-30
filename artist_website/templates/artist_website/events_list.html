@@ -1,0 +1,24 @@
+{% extends 'artist_website/base.html' %}
+
+{% block title %}Évènements{% endblock %}
+{% block content %}
+
+    {% for event in event_list %}
+        <div class="event">
+            <h3>{{ event.title }}</h3>
+            {% if event.picture %}
+                <div class="picture">
+                    <a href="{{ event.picture.url }}" data-toggle="lightbox">
+                        <img src="{{ event.picture_thumbnail.url }}" class="img-fluid">
+                    </a>
+                </div>
+            {% endif %}
+            <div class="text">
+                {{ event.text|safe }}
+            </div>
+        </div>
+    {% empty %}
+        <p>Pas d'évènement pour le moment.</p>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,101 @@
+{% load static %}
+
+<!DOCTYPE html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'artist_website/artist_website.css' %}">
+    {% block additionnal_css %}{% endblock %}
+
+    <title>{% block title %}L'émotion en chanson{% endblock title %}</title>
+</head>
+<body>
+{% block header %}
+{% endblock header %}
+<div class="outouterbox">
+<div id="page_surround" class="outerbox" >
+    <div class="container innerbox">
+        <header class="row justify-content-center" id="nav_col">
+
+            <div class="col col-md-auto">
+                {% include 'artist_website/navbar.html' %}
+
+            </div>
+        </header>
+            <div class="row justify-content-center" id="carrousel_col">
+            <div class="col col-md-auto" style="padding: 0px">
+                {% include 'artist_website/carousel.html' %}
+            </div>
+        </div>
+
+        <div class="row justify-content-center" id="main_col">
+            <div class="col col-md-auto">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div>
+
+        <footer class="row justify-content-center" id="footer_col">
+            <div class="col col-md-auto" >
+                <a style="text-decoration: none; color: darkorange" href="https://www.facebook.com/Catherine-Mathey-511161942236365/">Retrouvez-moi sur Facebook</a>
+                <p style="text-align: center">Catherinemathey.com - Tous droits réservés</p>
+                {% include 'artist_website/footer.html' %}
+            </div>
+
+        </footer>
+    </div>
+</div>
+</div>
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" crossorigin="anonymous"></script>
+    <script>/*!
+ * Bootstrap 4 multi dropdown navbar ( https://bootstrapthemes.co/demo/resource/bootstrap-4-multi-dropdown-navbar/ )
+ * Copyright 2017.
+ * Licensed under the GPL license
+ */
+
+
+$( document ).ready( function () {
+    $( '.dropdown-menu a.dropdown-toggle' ).on( 'click', function ( e ) {
+        var $el = $( this );
+        $el.toggleClass('active-dropdown');
+        var $parent = $( this ).offsetParent( ".dropdown-menu" );
+        if ( !$( this ).next().hasClass( 'show' ) ) {
+            $( this ).parents( '.dropdown-menu' ).first().find( '.show' ).removeClass( "show" );
+        }
+        var $subMenu = $( this ).next( ".dropdown-menu" );
+        $subMenu.toggleClass( 'show' );
+
+        $( this ).parent( "li" ).toggleClass( 'show' );
+
+        $( this ).parents( 'li.nav-item.dropdown.show' ).on( 'hidden.bs.dropdown', function ( e ) {
+            $( '.dropdown-menu .show' ).removeClass( "show" );
+            $el.removeClass('active-dropdown');
+        } );
+
+         if ( !$parent.parent().hasClass( 'navbar-nav' ) ) {
+            $el.next().css( { "top": $el[0].offsetTop, "left": $parent.outerWidth() - 4 } );
+        }
+
+        return false;
+    } );
+} );
+
+ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+
+    </script>
+    {% block additional_js %}{% endblock %}
+</body>
+</html>

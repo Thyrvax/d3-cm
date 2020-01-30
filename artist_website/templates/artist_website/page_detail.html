@@ -1,0 +1,12 @@
+{% extends 'artist_website/base.html' %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block content %}
+
+        <h3>{{ page.title }}</h3>
+        <div class="page">
+            {{ page.text|safe }}
+      </div>
+
+
+{% endblock %}

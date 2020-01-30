@@ -1,0 +1,22 @@
+{% extends 'artist_website/base.html' %}
+
+{% block title %}Articles de presse{% endblock %}
+{% block content %}
+
+    {% for article in article_list %}
+        <div class="article">
+            <h3>{{ article.title }}</h3>
+            {% if article.picture %}
+                <div class="picture">
+                    <a href="{{ article.picture.url }}" data-toggle="lightbox">
+                        <img src="{{ article.picture_thumbnail.url }}" class="img-fluid">
+                    </a>
+                </div>
+            {% endif %}
+            {{ article.text|safe }}
+        </div>
+    {% empty %}
+        <p>Pas d'article pour le moment</p>
+    {% endfor %}
+
+{% endblock %}
