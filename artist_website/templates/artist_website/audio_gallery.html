@@ -16,6 +16,9 @@
                     <div class="panel" style="max-height: none;">{{ track.comment|safe }}</div>
 
                 {% else %}
+                    <audio controls>
+                    <source src="{{ track.songfile.url }}" type="audio/mpeg">
+                    </audio>
                     <li><a href="#" data-src="{{ track.songfile.url }}">{{ track.songname }}</a></li>
                     <div class="panel">{{ track.comment|safe }}</div>
                 {% endif %}

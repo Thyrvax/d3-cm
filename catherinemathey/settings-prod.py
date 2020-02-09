@@ -40,7 +40,7 @@ SECRET_KEY = 'a+h=0p3lzj%6gr^pd8zc++2g7!9)tmp#cvays_8$gn%w07(%%k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'catherinemathey.com', '6838d1913358423ab9e05f1e8d269c49.testing-url.ws']
+ALLOWED_HOSTS = ['']
 
 
 # Application definition

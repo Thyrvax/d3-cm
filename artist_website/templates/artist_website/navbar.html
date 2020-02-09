@@ -1,13 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-custom">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    <a class="nav-link navbar-brand" href="{% url 'artist_website:home' %}">Accueil</a>
+    <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item {{ home_page }}">
-                <a class="nav-link" href="{% url 'artist_website:home' %}">Accueil</a>
-            </li>
+
             <li class="nav-item {{ bio_page }}">
                 <a class="nav-link" href="{% url 'artist_website:biographie' %}">Biographie</a>
             </li>
@@ -65,8 +64,10 @@
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <li><a class="dropdown-item dropdown-toggle" href="#">Musique</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'artist_website:discographie' %}">Discographie</a></li>
-                            <li><a class="dropdown-item" href="{% url 'artist_website:mp3' %}">Morceaux en écoute</a></li>
+                            <li><a class="dropdown-item" href="{% url 'artist_website:discographie' %}">Discographie</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'artist_website:mp3' %}">Morceaux en écoute</a>
+                            </li>
                         </ul>
                     </li>
                     <li><a class="dropdown-item" href="{% url 'artist_website:gallery' %}">Photos</a></li>

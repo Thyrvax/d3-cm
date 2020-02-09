@@ -1,3 +1,6 @@
+import json
+import os
+
 from artist_website.models import Event, PressArticle, Page, Prestation, Album, AudioFile, MusicAlbum
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
@@ -51,6 +54,24 @@ def view_galleries(request):
 def view_audio_gallery(request):
     tracks = AudioFile.objects.all()
     return render(request, "artist_website/audio_gallery.html", {"tracks": tracks, "media_page": "active"})
+
+
+def view_json_audio_gallery(request):
+    audio_files = AudioFile.objects.all()
+
+    # prepared a dict to populate the gallery, then parse as json
+    audio_dict = []
+    for this_file in audio_files:
+        audio_dict.append({
+            'track': this_file.tracknumber,  # link to thumbnail image
+            'name': this_file.songname,  # link to enlarged image
+            'duration': this_file.length,
+            'file': os.path.split(this_file.songfile.url)[1],
+            'text': this_file.comment,  # Title for the label or button
+        })
+
+    units_serialized = json.dumps(audio_dict)
+    return render(request, "artist_website/audio_gallery_json.html", {"js_item": units_serialized})
 
 
 def view_discography(request):

@@ -60,3 +60,10 @@ li.playing + .panel {
     margin: auto;
 
 }
+
+.audiojs .play {
+    background:url("/static/artist_website/audiojs/player-graphics.gif") -10px -1px no-repeat;
+}
+.audiojs .pause {
+    background:url("/static/artist_website/audiojs/player-graphics.gif") -10px -91px no-repeat;
+}

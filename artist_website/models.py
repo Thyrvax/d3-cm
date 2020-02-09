@@ -7,7 +7,7 @@ from django.utils import timezone
 
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFit
-
+import mutagen
 
 # Parent class for event and pressArticle
 class Item(models.Model):
@@ -154,9 +154,21 @@ class AudioFile(models.Model):
     songname = models.CharField(verbose_name='Titre', max_length=150)
     songfile = models.FileField(verbose_name='Fichier', upload_to='audio')
     comment = RichTextField(verbose_name='Commentaire', null=True, blank=True,)
+    length = models.CharField(verbose_name='Durée',  max_length=6, null=True, blank=True)
 
     def __str__(self):
         return self.songname
+
+    def save(self, *args, **kwargs):
+        audio_info = mutagen.File(self.songfile).info
+        song_length = int(audio_info.length)
+        minutes = str(song_length // 60)
+        seconds = str(song_length % 60)
+        if len(seconds) == 1:
+            self.length = str(song_length // 60) + ':0' + str(song_length % 60)
+        else:
+            self.length = str(song_length // 60) + ':' + str(song_length % 60)
+        super(AudioFile, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = "Fichiers audio"
