@@ -22,27 +22,27 @@
     <div class="container innerbox">
         <header class="row justify-content-center" id="nav_col">
 
-            <div class="col col-md-auto">
+            <div class="col col-lg-auto">
                 {% include 'artist_website/navbar.html' %}
 
             </div>
         </header>
             <div class="row justify-content-center" id="carrousel_col">
-            <div class="col col-md-auto" style="padding: 0px">
+            <div class="col col-lg-12" style="padding: 0px">
                 {% include 'artist_website/carousel.html' %}
             </div>
         </div>
 
         <div class="row justify-content-center" id="main_col">
-            <div class="col col-md-auto">
+            <div class="col col-lg-12">
                 {% block content %}
                 {% endblock content %}
             </div>
         </div>
 
         <footer class="row justify-content-center" id="footer_col">
-            <div class="col col-md-auto" >
-                <a style="text-decoration: none; color: darkorange" href="https://www.facebook.com/Catherine-Mathey-511161942236365/">Retrouvez-moi sur Facebook</a>
+            <div class="col col-lg-10" style="text-align: center">
+                <a style="text-decoration: none; color: darkorange;" href="https://www.facebook.com/Catherine-Mathey-511161942236365/">Retrouvez-moi sur Facebook</a>
                 <p style="text-align: center">Catherinemathey.com - Tous droits réservés</p>
                 {% include 'artist_website/footer.html' %}
             </div>

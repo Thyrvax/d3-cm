@@ -126,8 +126,10 @@ class Prestation(Item):
 
 
 class Album(models.Model):
-    titre = models.CharField(verbose_name="Nom de l'album", max_length=50)
+    titre = models.CharField(verbose_name="Nom de l'album", max_length=100)
     publicationDate = models.DateTimeField(verbose_name="Date de publication", blank=True, null=True)
+    photograph = models.CharField(verbose_name="photographe", max_length=100, blank=True, null=True)
+    photographWebsite = models.URLField(verbose_name="site du photographe", blank=True, null=True)
 
     class Meta:
         verbose_name = "Album photo"
@@ -141,9 +143,9 @@ class Photo(models.Model):
     album = models.ForeignKey(Album,  related_name="photos", on_delete=models.CASCADE)
     picture = models.ImageField(upload_to='gallery')
     picture_thumbnail = ImageSpecField(source='picture',
-                                       processors=[ResizeToFit(200, 200)],
+                                       processors=[ResizeToFit(height=300)],
                                        format='JPEG',
-                                       options={'quality': 60})
+                                       options={'quality': 70})
 
     def __str__(self):
         return self.picture.url

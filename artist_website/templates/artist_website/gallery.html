@@ -1,7 +1,9 @@
 {% extends 'artist_website/base.html' %}
-
+{% load static %}
 {% load photo_tags %}
-
+{% block additionnal_css %}
+    <link rel="stylesheet" href="{% static 'artist_website/justified-gallery/justifiedGallery.min.css' %}"/>
+{% endblock %}
 {% block content %}
     <h2> Galerie photo </h2>
     {% if complete_albums %}
@@ -9,27 +11,41 @@
             {% if photos %}
                 <div>
                     <h3>{{ album }}</h3>
-                    <div class="row picture-row">
+                    <div id="gall{{ album.id }}">
                         {% for photo in photos %}
-                            <div class="col picture">
-                                <a href="{{ photo.picture.url }}" data-toggle="lightbox" data-gallery="{{ album }} ">
-                                    <img src="{{ photo.picture_thumbnail.url }}" class="img-fluid">
+                            <div class="col picture ">
+                                {% if album.photograph %}
+                                    <a href="{{ photo.picture.url }}" data-toggle="lightbox" data-gallery="gallery"
+                                       data-footer="Par {{ album.photograph }}">
+                                {% else %}
+                                    <a href="{{ photo.picture.url }}" data-toggle="lightbox" data-gallery="gallery">
+                                {% endif %}
+                                <img src="{{ photo.picture_thumbnail.url }}" class="img-fluid">
                                 </a>
                             </div>
-                            {% if forloop.counter|divisibleby:4 %}
-                                <div class="clear"></div>
-                                </div>
-                                <div class="row picture-row">
-                            {% endif %}
-
                         {% endfor %}
-                        </div>
+                    </div>
                 </div>
             {% endif %}
 
         {% endfor %}
     {% else %}
         <p>No image available.</p>
+    {% endif %}
+{% endblock %}
+
+{% block additional_js %}
+    <script src="{% static 'artist_website/justified-gallery/jquery.justifiedGallery.min.js' %}"></script>
+    {% if complete_albums %}
+        {% for album, photos in complete_albums.items %}
+            {% if photos %}
+                <script>$("#gall{{ album.id }}").justifiedGallery({
+                    rowHeight: 180,
+                    margins: 10,
+                    lastRow: 'center'
+                });</script>
+            {% endif %}
+        {% endfor %}
     {% endif %}
 {% endblock %}
 
