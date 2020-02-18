@@ -1,0 +1,3 @@
+[submodule "gandi_tools"]
+	path = gandi_tools
+	url = https://github.com/Thyrvax/gandi_tools.git

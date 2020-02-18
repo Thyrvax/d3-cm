@@ -119,3 +119,6 @@ GitHub.sublime-settings
 /media/
 /pipenv/
 
+
+# Credentials file for gandi deployment
+.credentials.yaml
