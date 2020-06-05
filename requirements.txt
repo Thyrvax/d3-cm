@@ -2,7 +2,7 @@ asgiref==3.2.3
 bcrypt==3.1.7
 cffi==1.13.2
 cryptography==2.8
-Django==3.0.2
+Django==3.0.7
 django-appconf==1.0.3
 django-ckeditor==5.9.0
 django-cleanup==4.0.0
